@@ -1,0 +1,55 @@
+.bnt-header {
+  margin-left: $mg-4;
+  & button {
+    @include styleButton($color-white-1, $pd-11, $pd-11, $bd-2);
+    transition: all 0.3s;
+    color: $color-white-1;
+    box-shadow: 0 0 0 10rem $color-pink-1 inset;
+    border: none;
+    outline: none;
+  }
+  & button:hover {
+    color: $color-pink-1;
+    box-shadow: 0 0 0 0.15rem $color-pink-1 inset;
+    & .fa-solid {
+      transition: all 0.3s;
+      color: $color-pink-1;
+    }
+  }
+  & .fa-solid {
+    @include styleIcon($fs-3, $color-white-1, $pd-11);
+  }
+  i {
+    @include styleIcon($fs-3, $color-black-1, $pd-11);
+  }
+}
+
+.btn-contact {
+  margin: $mg-6 0;
+  border: 1px solid #000;
+  color: $color-white-1;
+  @include styleButton($color-white-1, $pd-11, $pd-4, $bd-2);
+  transition: all 0.3s;
+  box-shadow: 0 0 0 10rem $color-pink-1 inset;
+  border: none;
+  outline: none;
+  &:hover {
+    color: $color-pink-1;
+    box-shadow: 0 0 0 0.15rem $color-pink-1 inset;
+  }
+}
+
+.btn-text {
+  width: 100%;
+  margin: $mg-1 $mg-1;
+  color: $color-black-1;
+  box-shadow: 0 0 0 10rem $color-white-1 inset;
+  text-align: center;
+  @extend .btn-contact;
+}
+
+.btn-submit {
+  color: $color-black-1;
+  box-shadow: 0 0 0 10rem $color-white-1 inset;
+  @extend .btn-text;
+}

@@ -1,0 +1,35 @@
+// mixin style cho các text
+
+@mixin styleText($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+
+// mixin style cho cac icon
+@mixin styleIcon($fs, $color, $padding) {
+  font-size: $fs;
+  color: $color;
+  padding-left: $padding;
+}
+// mixin cho button
+@mixin styleButton($bg, $pd-y, $pd-x, $radius) {
+  background: $bg;
+  padding: $pd-y $pd-x;
+  border-radius: $radius;
+}
+// $screen : "large-down"
+@mixin responsive($screen) {
+  @if (map-has-key($map: $breakpoints, $key: $screen)) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      //   Nội dung bên trong cặp ngoặc nhọn khi sử dụng mixin sẽ được đưa vào vị trí của @content
+      @content;
+    }
+  } @else {
+    @warn "màn hình chưa khai báo";
+  }
+}

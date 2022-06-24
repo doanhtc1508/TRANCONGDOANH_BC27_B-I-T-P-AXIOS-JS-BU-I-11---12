@@ -1,0 +1,47 @@
+.portfolio {
+  position: relative !important;
+  background: $color-violet-1;
+  & .container .tab-content .row .col {
+    & .item {
+      position: relative;
+      z-index: 11;
+      background-color: $color-white-1;
+      text-align: center;
+      margin-bottom: $mg-2;
+      border-radius: $bd-1;
+      & .img {
+        border-top-left-radius: $bd-1;
+        border-top-right-radius: $bd-1;
+        overflow: hidden;
+      }
+      & .body {
+        padding: $pd-1;
+        & span {
+          @include styleText($fs-1, $fw-3, $color-pink-1);
+        }
+        & h5 {
+          @include styleText($fs-4, $fw-3, $color-black-1);
+        }
+
+        & p {
+          opacity: 0.5;
+          font-weight: $fw-2;
+          margin-bottom: 0;
+          padding-bottom: $pd-1;
+        }
+      }
+    }
+    & .item:hover {
+      box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+    }
+    & .img img {
+      transform: all 0.9s;
+      transition: 0.8s;
+      object-fit: cover;
+      object-position: center;
+    }
+    & .img:hover img {
+      transform: scale(1.1);
+    }
+  }
+}

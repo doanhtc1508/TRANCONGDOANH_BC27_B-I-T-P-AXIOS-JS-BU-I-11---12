@@ -1,0 +1,61 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 111;
+  transition: all 0.5s ease;
+  & .navbar {
+    padding: 0;
+  }
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: $mg-1;
+  color: $color-black-1;
+  font-weight: $fw-2;
+}
+
+.header.sticky {
+  width: 100%;
+  background: red;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  & .logo {
+    // visibility: hidden !important;
+    // height: 6rem;
+    display: none;
+  }
+}
+
+label {
+  cursor: pointer;
+  color: $color-white-1;
+  font-size: 3rem;
+
+  #btn {
+    left: 2rem;
+    top: 2rem;
+    position: absolute;
+    display: none;
+  }
+  #cancel {
+    color: $color-pink-1;
+    left: 37rem;
+    top: 2rem;
+    position: absolute;
+    opacity: 1;
+    display: none;
+  }
+}
+
+//responsive
+@include responsive("large-down") {
+  //   nội dung bên trong cặp ngoặc nhọn của sễ được đưa vào mixi thông qua @content
+  header {
+    #phoneNavbar {
+      .nav-link {
+        text-align: center;
+      }
+    }
+  }
+}

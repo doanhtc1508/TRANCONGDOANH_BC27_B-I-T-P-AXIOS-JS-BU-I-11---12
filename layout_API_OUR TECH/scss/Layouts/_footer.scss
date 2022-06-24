@@ -1,0 +1,51 @@
+.footer {
+  color: $color-white-1;
+  position: relative !important;
+  background: #a91d7e;
+  padding-top: $pd-9;
+  padding-bottom: $pd-2;
+  & .container .row {
+    & .col_footer {
+      z-index: 12;
+    }
+    & .footer-title {
+      @include styleText($fs-4, $fw-3, $color-white-1);
+    }
+    & .footer-icon .fa-brands {
+      @include styleIcon($fs-3, $color-white-1, $pd-11);
+    }
+    & .footer-address span {
+      padding-left: 10px;
+    }
+    & .footer-address hr {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+//responsive
+@include responsive("large-down") {
+}
+@include responsive("medium-down") {
+  .bg-5 {
+    bottom: 0;
+  }
+}
+@include responsive("small-down") {
+  .btn-submit {
+    width: 100%;
+    // margin-left: $mg-1;
+    text-align: center;
+    @include styleButton($color-white-1, $pd-11, $pd-2, $bd-2);
+  }
+  .btn-text {
+    width: 100%;
+    // margin: $mg-6 $mg-1;
+    text-align: center;
+    @include styleButton($color-white-1, $pd-11, $pd-2, $bd-2);
+  }
+  .bg-5 {
+    bottom: 0;
+  }
+}

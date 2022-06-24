@@ -1,0 +1,58 @@
+// color
+
+$color-pink-1: #b61984;
+$color-white-1: #fff;
+$color-black-1: #000;
+$color-violet-1: #dcd1f3;
+
+// font-size
+$fs-1: 12px;
+$fs-2: 18.5px;
+$fs-3: 20px;
+$fs-4: 24px;
+$fs-5: 30px;
+$fs-6: 60px;
+$fs-7: 35px;
+$fs-8: 44px;
+
+//font weight
+$fw-1: 400;
+$fw-2: 600;
+$fw-3: 700;
+
+//Padding
+$pd-1: 25px;
+$pd-2: 30px;
+$pd-3: 35px;
+$pd-4: 40px;
+$pd-5: 45px;
+$pd-6: 50px;
+$pd-7: 55px;
+$pd-8: 60px;
+$pd-9: 90px;
+$pd-10: 150px;
+$pd-11: 10px;
+
+//Margin
+$mg-1: 20px;
+$mg-2: 30px;
+$mg-3: 60px;
+$mg-4: 70px;
+$mg-5: 80px;
+$mg-6: 40px;
+
+//boder
+$bd-1: 10px;
+$bd-2: 20px;
+
+//break points
+$breakpoints: (
+  "extra-large": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 576px,
+  "extra-large-down": 1199.98px,
+  "large-down": 991.98px,
+  "medium-down": 767.98px,
+  "small-down": 575.98px,
+);

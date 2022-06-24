@@ -1,0 +1,36 @@
+.carousel .container {
+  margin-top: -80px;
+
+  & .row .col {
+    padding-top: $pd-10;
+  }
+  & .subAbout {
+    @include styleText($fs-6, $fw-3, $color-black-1);
+  }
+}
+
+.about {
+  display: block;
+  font-size: $fs-2;
+  color: $color-pink-1;
+  font-weight: $fw-2;
+}
+//responsive
+@include responsive("extra-large-down") {
+  .carousel .container .row .col {
+    padding-top: $pd-9;
+  }
+}
+@include responsive("large-down") {
+  .carousel {
+    margin-top: -155px;
+    & .container .row .col {
+      padding-top: $pd-10;
+    }
+  }
+}
+@include responsive("medium-down") {
+  .carousel {
+    margin-top: -100px;
+  }
+}

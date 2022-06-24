@@ -1,0 +1,52 @@
+.contact {
+  position: relative !important;
+}
+.main .container {
+  padding-top: $pd-8;
+  & .form {
+    padding: $pd-1;
+  }
+  & .title-contact {
+    @include styleText($fs-7, $fw-3, $color-black-1);
+  }
+  & .row .form-icon {
+    position: relative;
+    top: 32px;
+    left: 15px;
+    color: $color-pink-1;
+  }
+  & .row .col_1_1 {
+    z-index: 11;
+  }
+  & .row .col_1_2 {
+    z-index: 11;
+    padding: $pd-1 $pd-9 $pd-9 $pd-9;
+  }
+  & .row .form-control {
+    padding-left: $pd-4;
+    border-radius: $bd-2;
+  }
+}
+.contact .main .container .row .content .form {
+  background-color: $color-white-1;
+  border-radius: $bd-1;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+//responsive
+@include responsive("large-down") {
+  .main .container .row .col_1_2 {
+    padding: $pd-1;
+  }
+}
+@include responsive("medium-down") {
+  .main .container .row .col_1_2 {
+    padding: $pd-1;
+  }
+}
+@include responsive("small-down") {
+  .main .container .row .col_1_2 {
+    padding: $pd-1;
+  }
+}

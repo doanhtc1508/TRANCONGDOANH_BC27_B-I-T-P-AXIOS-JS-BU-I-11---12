@@ -1,0 +1,47 @@
+.bg-1 img {
+  object-fit: cover;
+  width: 100%;
+}
+.bg-2 {
+  object-fit: cover;
+  & img {
+    width: 100%;
+    vertical-align: middle;
+    border-style: none;
+  }
+}
+.bg-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  & img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    border-style: none;
+  }
+}
+.bg-4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  & img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.bg-5 {
+  position: absolute;
+  bottom: -192px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  & img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
