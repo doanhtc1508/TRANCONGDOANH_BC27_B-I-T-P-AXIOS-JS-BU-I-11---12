@@ -1,9 +1,11 @@
+var users = [];
 main();
+
 function main() {
   // B1: Gọi API lấy danh sách người dùng
   apiGetUser().then(function (result) {
     // Tạo biến users nhận kết quả trả về từ API
-    var users = result.data;
+    users = result.data;
     // Sau khi đã lấy được data từ API thành công
     // Duyệt mảng data và khởi tạo các đối tượng user
     for (var i = 0; i < users.length; i++) {
@@ -143,6 +145,7 @@ function showUpdateModal(userId) {
       Huỷ
     </button>
   `;
+
   // Call API lấy người dùng
   apiGetUserDetail(userId)
     .then(function (result) {
@@ -161,7 +164,9 @@ function showUpdateModal(userId) {
     .catch(function (error) {
       console.log(error);
     });
+
   resetForm();
+  document.getElementById("TaiKhoan").disabled = true;
 }
 
 // hàm xử lý gọi API  cập nhật người dùng
@@ -206,7 +211,6 @@ function updateUser() {
     .catch(function (error) {
       console.log(error);
     });
-  // document.getElementById("TaiKhoan").disabled = true;
 }
 
 // ham xu ly reset form va dong modal
@@ -219,6 +223,16 @@ function resetForm() {
   document.getElementById("loaiNgonNgu").value = "";
   document.getElementById("MoTa").value = "";
   document.getElementById("HinhAnh").value = "";
+
+  // reset thông báo lỗi
+  document.getElementById("tbTK").innerHTML = "";
+  document.getElementById("tbHoTen").innerHTML = "";
+  document.getElementById("tbMatKhau").innerHTML = "";
+  document.getElementById("tbEmail").innerHTML = "";
+  document.getElementById("tbHinhAnh").innerHTML = "";
+  document.getElementById("tbLoaiND").innerHTML = "";
+  document.getElementById("tbNgonNgu").innerHTML = "";
+  document.getElementById("tbMoTa").innerHTML = "";
 
   // Dong modal
   $("#myModal").modal("hide");
@@ -247,6 +261,7 @@ function showAddModal() {
     </button>
   `;
   resetForm();
+  document.getElementById("TaiKhoan").disabled = false;
 }
 
 // Uỷ quyền lắng nghe event của các button từ thẻ .modal-footer
@@ -311,17 +326,14 @@ function validation() {
   // Kiểm tra tài khoản người dùng
   apiGetUser().then(function (result) {
     // Tạo biến users nhận kết quả trả về từ API
-    var users = result.data;
-    for (var i = 0; i < users.length; i++) {
-      var user = users[i];
-      if (taiKhoan === user.taiKhoan) {
-        tbTK.innerHTML = "Tài khoản đã tồn tại";
-      }
-    }
+    users = result.data;
   });
   if (!checkInput(taiKhoan)) {
     valid = false;
     tbTK.innerHTML = "Tài khoản không được để trống";
+  } else if (!checkTaiKhoan(taiKhoan)) {
+    valid = false;
+    tbTK.innerHTML = "Tài khoản đã tồn tại";
   } else {
     tbTK.innerHTML = "";
   }
@@ -428,4 +440,25 @@ function checkInput(value) {
     return false;
   }
   return true;
+}
+function checkTaiKhoan(value, id) {
+  var valid = true;
+  // var list = [];
+  // if (id) {
+  //   for (var i = 0; i < list.length; i++) {
+  //     if (list[i].id != id) {
+  //       list.push.list[i];
+  //     } else {
+  //       list = users;
+  //     }
+  //   }
+  // }
+  for (var i = 0; i < users.length; i++) {
+    var user = users[i];
+    if (value === user.taiKhoan) {
+      valid = false;
+      break;
+    }
+  }
+  return valid;
 }
