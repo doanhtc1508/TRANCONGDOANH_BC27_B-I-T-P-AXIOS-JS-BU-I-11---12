@@ -304,11 +304,12 @@ function validation() {
   var moTa = document.getElementById("MoTa").value;
   var hinhAnh = document.getElementById("HinhAnh").value;
 
+  var valid = true;
+  var tbTK = document.getElementById("tbTK");
   // Kiểm tra tài khoản người dùng
   apiGetUser().then(function (result) {
     // Tạo biến users nhận kết quả trả về từ API
     var users = result.data;
-
     for (var i = 0; i < users.length; i++) {
       var user = users[i];
       if (taiKhoan === user.taiKhoan) {
@@ -316,11 +317,6 @@ function validation() {
       }
     }
   });
-
-  var valid = true;
-
-  var tbTK = document.getElementById("tbTK");
-
   if (!checkInput(taiKhoan)) {
     valid = false;
     tbTK.innerHTML = "Tài khoản không được để trống";
