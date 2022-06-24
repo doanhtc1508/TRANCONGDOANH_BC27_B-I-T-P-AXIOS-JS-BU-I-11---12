@@ -206,6 +206,7 @@ function updateUser() {
     .catch(function (error) {
       console.log(error);
     });
+  // document.getElementById("TaiKhoan").disabled = true;
 }
 
 // ham xu ly reset form va dong modal
@@ -245,6 +246,7 @@ function showAddModal() {
       Huỷ
     </button>
   `;
+  resetForm();
 }
 
 // Uỷ quyền lắng nghe event của các button từ thẻ .modal-footer
