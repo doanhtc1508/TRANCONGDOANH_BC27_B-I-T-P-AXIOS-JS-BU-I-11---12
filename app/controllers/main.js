@@ -54,7 +54,6 @@ function addUser() {
     moTa,
     hinhAnh
   );
-  // var valid = validation();
   // kiểm tra các input
   if (btnEdit === "add") {
     var valid = validation();
@@ -68,8 +67,6 @@ function addUser() {
 
   apiAddUser(user)
     .then(function (result) {
-      // Thêm thành công, tuy nhiên lúc này dữ liệu chỉ mới được thay đổi ở phía server
-      // Gọi tới hàm main để call API get users và hiển thị ra giao diện
       main();
       resetForm();
     })
@@ -94,7 +91,6 @@ function display(users) {
         <td>${user.loaiND}</td>
         <td>${user.moTa}</td>
 
-
         <td>
           <button
             class="btn btn-primary"
@@ -116,7 +112,7 @@ function display(users) {
       </tr>
     `;
   }
-  // DOM tới tbody và innerHTML bằng biến html
+
   document.getElementById("tblDanhSachNguoiDung").innerHTML = html;
 }
 
@@ -124,7 +120,6 @@ function display(users) {
 function deleteUser(userId) {
   apiDeleteUser(userId)
     .then(function () {
-      // Xoá thành công
       main();
     })
     .catch(function (error) {
@@ -132,14 +127,14 @@ function deleteUser(userId) {
     });
 }
 
-// hàm này dùng để cập nhật giao diện cho modal update và call API ấy chi tiết user để hiện lên giao diện
+// hàm hiện thông tin của người dùng lên form khi cập nhật
 function showUpdateModal(userId) {
   // thay đổi text của modal heaing và mpdal foooter
   document.querySelector(".modal-title").innerHTML = "Chỉnh sửa thông tin";
   document.querySelector(".modal-footer").innerHTML = `
     <button
       class="btn btn-primary"
-      data-type="chinhSua"
+      data-type="update"
     >
       Update
     </button>
@@ -154,7 +149,6 @@ function showUpdateModal(userId) {
   // Call API lấy người dùng
   apiGetUserDetail(userId)
     .then(function (result) {
-      // thành công, fill data lên giao diện
       var user = result.data;
       document.getElementById("maUser").value = user.id;
       document.getElementById("TaiKhoan").value = user.taiKhoan;
@@ -209,7 +203,7 @@ function updateUser() {
       users = result.data;
     });
     if (!checkInput(taiKhoan)) {
-      valid = false;
+      valvalidid = false;
       tbTK.innerHTML = "Tài khoản không được để trống";
     } else if (taiKhoan === users.taiKhoan) {
       valid = true;
