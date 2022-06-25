@@ -170,6 +170,7 @@ function showUpdateModal(userId) {
 
 // hàm xử lý gọi API  cập nhật người dùng
 function updateUser() {
+  btnEdit = "edit";
   // B1: DOM lấy value
   var id = document.getElementById("maUser").value;
   var taiKhoan = document.getElementById("TaiKhoan").value;
