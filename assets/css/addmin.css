@@ -3,7 +3,6 @@
 }
 
 
-
 .bnt-header {
   margin-left: 70px;
 }
@@ -47,4 +46,14 @@
   visibility: hidden;
   height: 6rem;
   display: none;
+}
+
+.menuNav.sticky {
+  width: 100%;
+  background: white;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+}
+
+.text-hearding{
+  margin-top: 150px !important;
 }
